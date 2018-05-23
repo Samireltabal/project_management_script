@@ -17,11 +17,7 @@ class Users extends CI_Controller {
       $this->load->view('register');
       $this->load->view('main/footer');
     }
-    /* function test() {
-      $user_name = "=========";
-      $password = "---------";
-      echo $this->users->verify_login($user_name,$password);
-    } */
+    
     /* login controller */
     function login() {
       $user_name = $this->input->post('username');
