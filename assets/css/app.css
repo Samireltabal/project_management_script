@@ -1,0 +1,186 @@
+body { 
+    background:  rgb(246, 249, 252) url(../imgs/bg.jpg) no-repeat center top ; font-family: 'Oswald', sans-serif; background-size:100%; 
+}
+* , h1 , h2 , h3, h4, h5 ,h6 , p , a , input , button { font-family: 'Oswald', sans-serif;
+}
+.no-padding { padding-right: 0; padding-left:0 ;}
+
+#loader-wrapper {
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#loader {
+    
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+
+    z-index: 1001;
+}
+
+    #loader:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #e74c3c;
+
+        -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #f9c922;
+
+        -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+           animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+   }
+
+    @-webkit-keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+    @keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+
+    #loader-wrapper .loader-section {
+        
+        position: fixed;
+        top: 0;
+        width: 51%;
+        height: 100%;
+        background:  #222222;
+        z-index: 1000;
+        -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(0);  /* IE 9 */
+        transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
+    }
+
+    #loader-wrapper .loader-section.section-left {
+        left: 0;
+        background: url(../imgs/logo.png) no-repeat center #eee;
+    }
+
+    #loader-wrapper .loader-section.section-right {
+        right: 0;
+        background: url(../imgs/logo-2.png) no-repeat center #222222;
+    }
+
+    /* Loaded */
+    .loaded #loader-wrapper .loader-section.section-left {
+        -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateX(-100%);  /* IE 9 */
+                transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+
+    .loaded #loader-wrapper .loader-section.section-right {
+        -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateX(100%);  /* IE 9 */
+                transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+
+-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    }
+    
+    .loaded #loader {
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;  
+                transition: all 0.3s ease-out;
+    }
+    .loaded #loader-wrapper {
+        visibility: hidden;
+
+        -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateY(-100%);  /* IE 9 */
+                transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.3s 1s ease-out;  
+                transition: all 0.3s 1s ease-out;
+    }
+    
+    /* JavaScript Turned Off */
+    .no-js #loader-wrapper {
+        display: none;
+    }
+    .no-js h1 {
+        color: #222222;
+    }
+
+    /* login */
+    .login { 
+        margin-top:1em;
+        padding:1em 2em;
+        border-radius: 5px;
+        background: rgba(41, 128, 185,0.9) 
+    }
+    .register { 
+        margin-top:1em;
+        padding:1em 2em;
+        border-radius: 5px;
+        background: rgba(1, 38, 63, 0.822) 
+    }
+    .login h1 { color:#fff; padding:0.5rem }
+    .login label { color:#fff; padding:0em 0em 1em 0em;}
+    .register h1 { color:#fff; padding:0.5rem }
+    .register label { color:#fff; padding:0em 0em 1em 0em;}
+    @media (min-width: 960px) {
+        .login { margin-top:24vh; }
+    }
+    
+    .input-group-prepend > .input-group-text { border-radius: .25rem 0rem 0rem 0.25rem; }
+    .input-group-prepend > .form-control { border-radius:  0rem .25rem .25rem 0rem ; }
+    .form-check > small { color:#ddd; font-family: 'Oswald', sans-serif; font-weight: normal; font-size:0.8em; }
+    .btn-outline-secondary { border-color:#fff ; color:#fff;}
+    .btn-outline-secondary:hover { border-color:#fff; }
+
+    .page { margin-top: 1em; background:rgba(52, 73, 94,1.0) ; border:1px solid rgba(52, 73, 94,1.0); border-radius: 4px; padding:1em; color:rgb(252, 77, 57)}
+     
+    code { padding : 0.5em; background : #eee; margin: 2px; border-radius: 0.5em;  }
