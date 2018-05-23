@@ -19,6 +19,9 @@
       <li class="nav-item">
       <?php echo anchor('/restricted/admin_only','Admin Only',array('class'=>'nav-link')); ?>
       </li>
+      <li class="nav-item">
+      <?php echo anchor('/admin/main','Management',array('class'=>'nav-link')); ?>
+      </li>
     </ul>
             <?php login_form(); ?>
         
